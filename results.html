@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Results Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('data:image/jpeg;base64,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');
+            background-size: cover;
+            text-align: center;
+            padding-top: 50px;
+        }
+        #weatherResults {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="weatherResults">
+        <h3>Weather in {{ location }}</h3>
+        <h3>{{ temp }}° C</h3>
+        <h3>{{ weather }}</h3>
+        <h4>Feels like: {{ feels_like }}° C</h4>
+    </div>
+    
+</body>
+</html>
